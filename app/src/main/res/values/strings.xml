@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">whynotcompmat3</string>
     <string name="gallery_screen_title">ARTWORKS FROM ART INSTITUTE OF CHICAGO</string>
-    <string name="painting_description">"Painting titled: %s"</string>
+    <string name="painting_description">"Art item titled: %s"</string>
+    <string name="art_item_title">Title</string>
+    <string name="art_item_artist_name">Artist name</string>
+    <string name="art_item_place_of_origin">Place of origin</string>
+    <string name="art_item_style">Style</string>
+    <string name="art_item_unknown">Unknown</string>
+    <string name="art_item_no_data">No data</string>
 </resources>
