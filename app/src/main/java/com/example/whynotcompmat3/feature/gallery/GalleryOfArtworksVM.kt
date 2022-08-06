@@ -22,7 +22,7 @@ class GalleryOfArtworksVM @Inject constructor(
         viewModelScope.launch {
             viewState = try {
                 var result = artworksRepository.artworks()
-                GalleryOfArtworksVS.ArtworksList(artworks = result.toArtworksList())
+                GalleryOfArtworksVS.ArtworksList(artworks = result)
             } catch (e: Throwable) {
                 GalleryOfArtworksVS.Error
             }

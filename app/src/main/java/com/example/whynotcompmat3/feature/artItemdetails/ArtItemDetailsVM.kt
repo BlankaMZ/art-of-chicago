@@ -27,7 +27,7 @@ class ArtItemDetailsVM @Inject constructor(
         viewModelScope.launch {
             viewState = try {
                 var result = artworksRepository.artItem(argument.toInt())
-                ArtItemDetailsVS.ArtItemDetails(artItem = result.toArtItem())
+                ArtItemDetailsVS.ArtItemDetails(artItem = result)
             } catch (e: Throwable) {
                 ArtItemDetailsVS.Error
             }
