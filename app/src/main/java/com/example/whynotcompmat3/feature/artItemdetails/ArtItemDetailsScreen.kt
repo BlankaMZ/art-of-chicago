@@ -21,6 +21,7 @@ import com.example.whynotcompmat3.feature.other.ErrorMessageCentered
 import com.example.whynotcompmat3.feature.other.LoadingComposable
 
 @Composable
+@Suppress("UnusedPrivateMember")
 fun ArtItemDetailsScreen(imageId: String) {
     val viewModel = hiltViewModel<ArtItemDetailsVM>()
 

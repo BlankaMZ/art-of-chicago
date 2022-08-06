@@ -50,7 +50,10 @@ fun GalleryOfArtworksComposable(
         Divider()
         LazyColumn {
             items(artworks) { artItem ->
-                ArtItemInListComposable(artItem, onArtItemClicked = { navController.navigate("artItemDetails/${artItem.id}") })
+                ArtItemInListComposable(artItem,
+                    onArtItemClicked = {
+                        navController.navigate("artItemDetails/${artItem.id}")
+                    })
                 Divider()
             }
         }

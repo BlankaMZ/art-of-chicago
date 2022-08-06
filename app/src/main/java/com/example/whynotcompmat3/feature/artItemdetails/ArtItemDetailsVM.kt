@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.whynotcompmat3.data.net.repositories.ArtworksRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import retrofit2.HttpException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -25,7 +26,8 @@ class ArtItemDetailsVM @Inject constructor(
             viewState = try {
                 var result = artworksRepository.artItem(argument.toInt())
                 ArtItemDetailsVS.ArtItemDetails(artItem = result)
-            } catch (e: Throwable) {
+            } catch (e: HttpException) {
+                println(e)
                 ArtItemDetailsVS.Error
             }
         }
