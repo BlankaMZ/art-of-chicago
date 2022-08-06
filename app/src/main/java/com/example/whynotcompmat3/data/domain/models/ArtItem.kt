@@ -12,7 +12,6 @@ data class ArtItem(
     val imageUrl: String
 )
 
-
 fun ArtItemJson.toArtItem(urlForImage: String) = ArtItem(
     id = id,
     title = title,

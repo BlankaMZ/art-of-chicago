@@ -9,12 +9,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun  ErrorMessageCentered() {
+fun ErrorMessageCentered() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier.fillMaxSize()
-    ){
+    ) {
         Text("Ups! Something went wrong :( ")
     }
 }

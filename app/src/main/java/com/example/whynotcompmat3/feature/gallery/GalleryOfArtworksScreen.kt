@@ -13,8 +13,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.whynotcompmat3.R
 import com.example.whynotcompmat3.data.domain.models.ArtItem
-import com.example.whynotcompmat3.feature.gallery.GalleryOfArtworksVS
 import com.example.whynotcompmat3.feature.gallery.GalleryOfArtworksVM
+import com.example.whynotcompmat3.feature.gallery.GalleryOfArtworksVS
 import com.example.whynotcompmat3.feature.other.ErrorMessageCentered
 import com.example.whynotcompmat3.feature.other.LoadingComposable
 
@@ -45,14 +45,14 @@ fun GalleryOfArtworksComposable(
     ) {
         Text(
             stringResource(id = R.string.gallery_screen_title),
-        modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_common)))
+            modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_common))
+        )
         Divider()
         LazyColumn {
             items(artworks) { artItem ->
-                ArtItemInListComposable(artItem, onArtItemClicked = { navController.navigate("artItemDetails/${artItem.id}")})
+                ArtItemInListComposable(artItem, onArtItemClicked = { navController.navigate("artItemDetails/${artItem.id}") })
                 Divider()
             }
         }
     }
 }
-

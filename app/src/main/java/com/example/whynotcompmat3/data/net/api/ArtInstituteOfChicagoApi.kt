@@ -11,7 +11,5 @@ interface ArtInstituteOfChicagoApi {
     suspend fun artworks(): ArtworksJson
 
     @GET("artworks/{imageId}")
-    suspend fun getArtItem(@Path("imageId") imageId: Int) : ArtItemResultJson
-
+    suspend fun getArtItem(@Path("imageId") imageId: Int): ArtItemResultJson
 }
-

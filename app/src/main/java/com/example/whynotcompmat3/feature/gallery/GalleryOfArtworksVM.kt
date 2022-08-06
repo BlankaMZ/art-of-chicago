@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.whynotcompmat3.data.net.models.toArtworksList
 import com.example.whynotcompmat3.data.net.repositories.ArtworksRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -28,5 +27,4 @@ class GalleryOfArtworksVM @Inject constructor(
             }
         }
     }
-
 }

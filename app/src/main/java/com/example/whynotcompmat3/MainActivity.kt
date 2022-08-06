@@ -41,7 +41,8 @@ class MainActivity : ComponentActivity() {
         NavHost(navController = navController, startDestination = "gallery") {
             composable("gallery") { GalleryOfArtworksScreen(navController) }
             composable("artItemDetails/{imageId}") { backStackEntry ->
-                ArtItemDetailsScreen(backStackEntry.arguments?.getString("imageId") ?: "") }
+                ArtItemDetailsScreen(backStackEntry.arguments?.getString("imageId") ?: "")
+            }
         }
     }
 }

@@ -24,5 +24,3 @@ data class PaginationJson(
 
 fun ArtworksJson.toArtworksList(): List<ArtItem> =
     data.map { artItemJson -> artItemJson.toArtItem(config.iiifUrl) }
-
-

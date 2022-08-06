@@ -4,7 +4,7 @@ import com.example.whynotcompmat3.data.domain.models.ArtItem
 
 class ArtItemFakes {
 
-    fun listOfThreeArtItems() : List<ArtItem> {
+    fun listOfThreeArtItems(): List<ArtItem> {
         return listOf(
             ArtItem(
                 id = 1,
