@@ -14,7 +14,7 @@ class ArtItemFakes {
                 styleTitle = "Renaissance",
                 imageUrl =
                 "https://i.picsum.photos/id/1011/5472/3648.jpg" +
-                        "?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk"
+                    "?hmac=Koo9845x2akkVzVFX3xxAc9BCkeGYA9VRVfLE4f0Zzk"
             ),
             ArtItem(
                 id = 1,
@@ -24,7 +24,7 @@ class ArtItemFakes {
                 styleTitle = "Pop art",
                 imageUrl =
                 "https://i.picsum.photos/id/1012/3973/2639.jpg" +
-                        "?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
+                    "?hmac=s2eybz51lnKy2ZHkE2wsgc6S81fVD1W2NKYOSh8bzDc"
             ),
             ArtItem(
                 id = 1,
@@ -34,10 +34,9 @@ class ArtItemFakes {
                 styleTitle = "Art is dead",
                 imageUrl =
                 "https://i.picsum.photos/id/1042/3456/5184.jpg" +
-                        "?hmac=5xr8Veg2D_kEQQO6rvGj_Yk8s_N4iq3-eZ9_KclSXNQ"
+                    "?hmac=5xr8Veg2D_kEQQO6rvGj_Yk8s_N4iq3-eZ9_KclSXNQ"
             ),
-
-            )
+        )
     }
 }
 
