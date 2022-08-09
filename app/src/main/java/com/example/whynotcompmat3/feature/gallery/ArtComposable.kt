@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import coil.compose.AsyncImage
 import com.example.whynotcompmat3.R
 import com.example.whynotcompmat3.data.domain.models.ArtItem
@@ -19,8 +20,8 @@ import com.example.whynotcompmat3.data.domain.models.ArtItem
 @Composable
 fun ArtItemInListComposable(
     art: ArtItem,
-    onArtItemClicked: () -> Unit = {},
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onArtItemClicked: () -> Unit = {}
 ) {
     Row(
         horizontalArrangement = Arrangement.Center,
@@ -43,6 +44,7 @@ fun ArtItemInListComposable(
             Text(
                 art.title,
                 style = MaterialTheme.typography.bodyLarge,
+                textAlign = TextAlign.Center,
                 modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_common_small))
             )
             Text(

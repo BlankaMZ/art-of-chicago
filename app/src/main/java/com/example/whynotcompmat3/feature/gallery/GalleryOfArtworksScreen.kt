@@ -3,12 +3,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
+import androidx.compose.material.Scaffold
+import androidx.compose.material.TopAppBar
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.whynotcompmat3.R
@@ -41,27 +45,37 @@ fun GalleryOfArtworksComposable(
     navController: NavController,
     modifier: Modifier = Modifier
 ) {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier
-            .padding(
-                horizontal = dimensionResource(id = R.dimen.padding_common)
-            )
-    ) {
-        Text(
-            stringResource(id = R.string.gallery_screen_title),
-            modifier = Modifier.padding(vertical = dimensionResource(id = R.dimen.padding_common))
-        )
-        Divider()
-        LazyColumn {
-            items(artworks) { artItem ->
-                ArtItemInListComposable(
-                    artItem,
-                    onArtItemClicked = {
-                        navController.navigate("artItemDetails/${artItem.id}")
-                    }
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                backgroundColor = MaterialTheme.colorScheme.background,
+                contentColor = MaterialTheme.colorScheme.onBackground
+            ) {
+                Text(
+                    stringResource(id = R.string.gallery_screen_title),
+                    fontWeight = FontWeight.Bold
                 )
-                Divider()
+            }
+        }
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = modifier
+                .padding(
+                    horizontal = dimensionResource(id = R.dimen.padding_common)
+                )
+        ) {
+            Divider()
+            LazyColumn {
+                items(artworks) { artItem ->
+                    ArtItemInListComposable(
+                        artItem,
+                        onArtItemClicked = {
+                            navController.navigate("artItemDetails/${artItem.id}")
+                        }
+                    )
+                    Divider()
+                }
             }
         }
     }
