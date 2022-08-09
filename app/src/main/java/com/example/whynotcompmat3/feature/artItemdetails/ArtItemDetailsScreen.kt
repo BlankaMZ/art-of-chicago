@@ -67,8 +67,22 @@ fun ArtItemDetailsComposable(art: ArtItem) {
             )
         }
         ArtistDataSet(stringResource(id = R.string.art_item_title), art.title)
-        ArtistDataSet(stringResource(id = R.string.art_item_artist_name), art.artistName)
-        ArtistDataSet(stringResource(id = R.string.art_item_place_of_origin), art.placeOfOrigin)
+        ArtistDataSet(
+            stringResource(id = R.string.art_item_artist_name),
+            art.artistName.ifEmpty {
+                stringResource(
+                    id = R.string.art_item_unknown
+                )
+            }
+        )
+        ArtistDataSet(
+            stringResource(id = R.string.art_item_place_of_origin),
+            art.placeOfOrigin.ifEmpty {
+                stringResource(
+                    id = R.string.art_item_unknown
+                )
+            }
+        )
         ArtistDataSet(
             stringResource(id = R.string.art_item_style),
             art.styleTitle.ifEmpty {

@@ -45,7 +45,11 @@ fun ArtItemInListComposable(
                 modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_common_small))
             )
             Text(
-                art.artistName,
+                art.artistName.ifEmpty {
+                    stringResource(
+                        id = R.string.art_item_author_unknown
+                    )
+                },
                 style = MaterialTheme.typography.bodyMedium,
             )
         }
