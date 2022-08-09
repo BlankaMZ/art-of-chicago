@@ -41,7 +41,11 @@ fun GalleryOfArtworksComposable(
     navController: NavController
 ) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .padding(
+                horizontal = dimensionResource(id = R.dimen.padding_common)
+            )
     ) {
         Text(
             stringResource(id = R.string.gallery_screen_title),

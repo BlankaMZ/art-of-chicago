@@ -68,9 +68,11 @@ fun ArtItemDetailsComposable(art: ArtItem) {
         ArtistDataSet(stringResource(id = R.string.art_item_place_of_origin), art.placeOfOrigin)
         ArtistDataSet(
             stringResource(id = R.string.art_item_style),
-            if (art.styleTitle.isNullOrEmpty()) stringResource(
-                id = R.string.art_item_no_data
-            ) else art.styleTitle
+            art.styleTitle.ifEmpty {
+                stringResource(
+                    id = R.string.art_item_no_data
+                )
+            }
         )
     }
 }
