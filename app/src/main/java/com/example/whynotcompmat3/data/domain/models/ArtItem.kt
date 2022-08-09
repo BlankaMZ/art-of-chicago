@@ -9,7 +9,7 @@ data class ArtItem(
     val placeOfOrigin: String,
     val artistName: String,
     val styleTitle: String,
-    val imageUrl: String
+    val imageUrl: String?
 )
 
 fun ArtItemJson.toArtItem(urlForImage: String) = ArtItem(
@@ -18,7 +18,7 @@ fun ArtItemJson.toArtItem(urlForImage: String) = ArtItem(
     placeOfOrigin = placeOfOrigin ?: "",
     artistName = artistTitle ?: "",
     styleTitle = styleTitle ?: "",
-    imageUrl = if (imageId != null) createImageUrl(imageId, urlForImage) else "",
+    imageUrl = createImageUrl(imageId, urlForImage),
 )
 
 fun ArtItemResultJson.toArtItem() = ArtItem(
@@ -27,10 +27,13 @@ fun ArtItemResultJson.toArtItem() = ArtItem(
     placeOfOrigin = data.placeOfOrigin ?: "",
     artistName = data.artistTitle ?: "",
     styleTitle = data.styleTitle ?: "",
-    imageUrl = if (data.imageId != null) createImageUrl(data.imageId, config.iiifUrl) else "",
+    imageUrl = createImageUrl(data.imageId, config.iiifUrl),
 )
 
-fun createImageUrl(imageId: String, urlForImage: String): String {
+fun createImageUrl(imageId: String?, urlForImage: String): String? {
+    if (imageId == null) {
+        return null
+    }
     return "$urlForImage/$imageId/$IMAGE_URL_END_DEFAULT"
 }
 

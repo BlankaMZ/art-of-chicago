@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -60,6 +61,8 @@ fun ArtItemDetailsComposable(art: ArtItem) {
             AsyncImage(
                 model = art.imageUrl,
                 contentDescription = stringResource(id = R.string.painting_description, art.title),
+                placeholder = painterResource(id = R.drawable.image_placeholder),
+                fallback = painterResource(id = R.drawable.ic_no_image),
                 modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_common))
             )
         }
