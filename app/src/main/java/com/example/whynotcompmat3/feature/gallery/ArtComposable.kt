@@ -19,11 +19,12 @@ import com.example.whynotcompmat3.data.domain.models.ArtItem
 @Composable
 fun ArtItemInListComposable(
     art: ArtItem,
-    onArtItemClicked: () -> Unit = {}
+    onArtItemClicked: () -> Unit = {},
+    modifier: Modifier = Modifier
 ) {
     Row(
         horizontalArrangement = Arrangement.Center,
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
     ) {
         Column(

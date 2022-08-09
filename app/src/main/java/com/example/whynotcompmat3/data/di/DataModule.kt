@@ -14,7 +14,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-const val BASE_URL = "https://api.artic.edu/api/v1/"
+const val BaseUrl = "https://api.artic.edu/api/v1/"
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -45,7 +45,7 @@ class DataModule {
     ): Retrofit =
         Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl(BASE_URL)
+            .baseUrl(BaseUrl)
             .client(okHttpClientBuilder)
             .build()
 

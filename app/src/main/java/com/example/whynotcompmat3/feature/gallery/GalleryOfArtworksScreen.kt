@@ -38,11 +38,12 @@ fun GalleryOfArtworksScreen(navController: NavController) {
 @Composable
 fun GalleryOfArtworksComposable(
     artworks: List<ArtItem>,
-    navController: NavController
+    navController: NavController,
+    modifier: Modifier = Modifier
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
+        modifier = modifier
             .padding(
                 horizontal = dimensionResource(id = R.dimen.padding_common)
             )

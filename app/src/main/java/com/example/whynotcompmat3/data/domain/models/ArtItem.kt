@@ -34,7 +34,7 @@ fun createImageUrl(imageId: String?, urlForImage: String): String? {
     if (imageId == null) {
         return null
     }
-    return "$urlForImage/$imageId/$IMAGE_URL_END_DEFAULT"
+    return "$urlForImage/$imageId/$ImageUrlEndDefault"
 }
 
-const val IMAGE_URL_END_DEFAULT = "full/843,/0/default.jpg"
+const val ImageUrlEndDefault = "full/843,/0/default.jpg"

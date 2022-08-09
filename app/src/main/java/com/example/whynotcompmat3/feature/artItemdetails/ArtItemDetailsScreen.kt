@@ -42,10 +42,13 @@ fun ArtItemDetailsScreen(imageId: String) {
 }
 
 @Composable
-fun ArtItemDetailsComposable(art: ArtItem) {
+fun ArtItemDetailsComposable(
+    art: ArtItem,
+    modifier: Modifier = Modifier
+) {
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .padding(
                 vertical = dimensionResource(id = R.dimen.padding_common_big),
                 horizontal = dimensionResource(id = R.dimen.padding_common)
@@ -95,9 +98,13 @@ fun ArtItemDetailsComposable(art: ArtItem) {
 }
 
 @Composable
-fun ArtistDataSet(title: String, data: String) {
+fun ArtistDataSet(
+    title: String,
+    data: String,
+    modifier: Modifier = Modifier
+) {
     Column(
-        modifier = Modifier.padding(bottom = dimensionResource(id = R.dimen.padding_common_small))
+        modifier = modifier.padding(bottom = dimensionResource(id = R.dimen.padding_common_small))
     ) {
         Text(
             title,
